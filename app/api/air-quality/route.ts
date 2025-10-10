@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { fetchAirQualityData, fetchHistoricalData, NoAirQualityData } from "@/lib/air-quality-api"
+import { sendErrorMail } from "../../../emailErrorNotifier"
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
@@ -7,14 +8,16 @@ export async function GET(request: NextRequest) {
 
   try {
     const [current, historical] = await Promise.all([fetchAirQualityData(city), fetchHistoricalData(city, 7)])
-
     return NextResponse.json({ current, historical })
   } catch (error) {
     if (error instanceof NoAirQualityData) {
       return NextResponse.json({ error: "No air quality data available" }, { status: 404 })
     }
-
+    
+    // Send email notification for server errors
     console.error("API Error:", error)
+    sendErrorMail(error as Error, request as any)
+    
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }
