@@ -1,7 +1,7 @@
 ## OVERVIEW 
  AeroHealth – A Real-Time Air Quality MonitoringWebsite for a Healthier Future 🌍
  
-TECH STACK
+## TECH STACK
 
 Frontend: React.js (TypeScript) / Tailwind CSS
 
