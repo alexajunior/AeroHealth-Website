@@ -1,5 +1,5 @@
 ## OVERVIEW 
- AeroHealth – A Real-Time Air Quality MonitoringWebsite for a Healthier Future 🌍
+ AeroHealth – A Real-Time Air Quality Monitoring Web App for a Healthier Future 🌍
  
 ## TECH STACK
 
