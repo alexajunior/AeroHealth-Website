@@ -16,4 +16,4 @@ aerohealth.vercel.app
 
 ## Copyright
 
-© 2025 Alex Junior. All rights reserved. This work is the original creation of Alex Junior and is protected under copyright law.
+© 2026 Alex Junior. All rights reserved. This work is the original creation of Alex Junior and is protected under copyright law.
